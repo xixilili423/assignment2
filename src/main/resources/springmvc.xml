@@ -20,4 +20,6 @@
     <!--处理器映射器，处理器适配器-->
     <!--注册最合适的处理器适配器-->
     <mvc:annotation-driven></mvc:annotation-driven>
+    <!--配置数据库连接-->
+
 </beans>

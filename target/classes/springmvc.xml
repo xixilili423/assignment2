@@ -20,4 +20,19 @@
     <!--处理器映射器，处理器适配器-->
     <!--注册最合适的处理器适配器-->
     <mvc:annotation-driven></mvc:annotation-driven>
+    <!--配置数据库连接-->
+    <bean id="dataSource" class="org.apache.commons.dbcp2.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="${spring.datasource.driver-class-name}"></property>
+        <property name="url" value="${spring.datasource.url}"></property>
+        <property name="username" value="${spring.datasource.username}"></property>
+        <property name="password" value="${spring.datasource.password}"></property>
+    </bean>
+    <!-- MyBatis 的 SqlSessionFactory 配置 -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"></property>
+        <!-- MyBatis Mapper 配置 -->
+        <property name="mapperLocations" value="classpath:mybatis/mappers/**/*.xml"></property>
+        <!-- MyBatis 对应实体类的包路径 -->
+        <property name="typeAliasesPackage" value="com.shipping.entity"></property>
+    </bean>
 </beans>

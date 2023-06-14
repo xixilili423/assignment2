@@ -13,13 +13,9 @@ public class hello {
 
     public ModelAndView Getdata(){
         Date date=new Date();//服务器时间
-
         ModelAndView mv = new ModelAndView();
-
         mv.addObject("date" , date);
-
         mv.setViewName("index");
-
         return mv;
     }
 }
