@@ -63,32 +63,12 @@
 <body>
 <div class="container">
 <h1>Shipment Tracking</h1>
-<form  id="myForm" action="../../shipping/track" method="POST">
+<form  id="myForm" action="../shipping/track" method="POST">
   <label for="item">Item ID:</label>
   <input type="text" id="item" name="item" >
-  <button type="submit" onclick="submitForm()" >Track</button>
+  <button type="submit" value="Submit" >Track</button>
 </form>
-  <script>
-    data:{
-    }
-    function submitForm() {
-      var form = document.getElementById("myForm");
-      // 获取当前URL
-      var currentUrl = form.action;
-      // 构建新的URL路径
-      var newUrl = currentUrl.replace("/shipping/track", "/app/shipping/track");
-      // 获取表单元素
-      var form = document.getElementById("myForm");
-      // 设置表单的action属性为新的URL路径
-      form.action = newUrl;
-      // 提交表单
-      form.submit();
-      // 获取表单元素
-      var form = document.getElementById("myForm");
-      // 提交表单
-      form.submit();
-    }
-  </script>
+
   <%--@elvariable id="shipment" type="com.entity.Shipment" --%>
 <c:if test="${not empty shipment}">
   <div class="shipment-details">

@@ -9,7 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <title>Login</title>
+    <title>Sign up</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -58,7 +58,7 @@
     </style>
 </head>
 <body>
-<h1>Login</h1>
+<h1>Sign up</h1>
 <form action="user/registry" method="POST" enctype="application/json">
     <label for="username">Username:</label>
     <input type="text" id="username" name="username" required><br>
